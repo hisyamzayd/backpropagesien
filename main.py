@@ -29,7 +29,7 @@ bias_output = [-0.4, 0.2, 0.1]
 
 alpha = 0.1
 
-batas_epoch = 1100
+max_epoch = 1100
 
 ####################################################################################################
 
@@ -158,9 +158,9 @@ def update_bobot_func(matrix1, matrix2) :
             result[i] = matrix1[i] + matrix2[i]
     return result
 
-def pengujian(v_i_j_baru, data_latih, target_data_latih, bias_hidden, w, bias_output, alpha, batas_epoch) :
+def pengujian(v_i_j_baru, data_latih, target_data_latih, bias_hidden, w, bias_output, alpha, max_epoch) :
     epoch = 0
-    while (epoch < batas_epoch) :
+    while (epoch < max_epoch) :
         epoch += 1
         z, z_in, y, y_in = each_feedforward(v_i_j_baru, data_latih[0], bias_hidden, w, bias_output)
         Δw_j_k, Δw_0_k, Δv_i_j, Δv_0_j = each_backpropagation(data_latih[0], target_data_latih[0], w, alpha, z, z_in, y, y_in)
@@ -172,7 +172,7 @@ if __name__ == "__main__" :
 
     v_i_j_baru = bobot_nguyen_widrow(len(data_latih[0]), len(target_data_latih), v_i_j)
 
-    w, bias_output, v_i_j_baru, bias_hidden = pengujian(v_i_j_baru, data_latih, target_data_latih, bias_hidden, w, bias_output, alpha, batas_epoch)
+    w, bias_output, v_i_j_baru, bias_hidden = pengujian(v_i_j_baru, data_latih, target_data_latih, bias_hidden, w, bias_output, alpha, max_epoch)
 
     print('bobot output = ', w, '\n')
     print('bias output = ', bias_output, '\n')
