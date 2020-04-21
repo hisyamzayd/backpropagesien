@@ -22,7 +22,7 @@ def fungsi_aktivasi(x) :
 
 and its derivative 
 
-<img src="https://latex.codecogs.com/gif.latex?f'(x)&space;=&space;f(x)*[1-f(x)]" title="f'(x) = f(x)*[1-f(x)]" />
+<a href="https://www.codecogs.com/eqnedit.php?latex=f'(x)&space;=&space;f(x)*[1-f(x)]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f'(x)&space;=&space;f(x)*[1-f(x)]" title="f'(x) = f(x)*[1-f(x)]" /></a>
 
 ```python
 def fungsi_aktivasi_turunan(x) :
