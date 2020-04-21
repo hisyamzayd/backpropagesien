@@ -12,7 +12,7 @@
 
 Using binary sigmoid function
 
-<img src="https://latex.codecogs.com/gif.latex?f(x)&space;=&space;\frac{1}{1&plus;e^-x}" title="f(x) = \frac{1}{1+e^-x}" />
+<img src="https://latex.codecogs.com/svg.latex?f(x)&space;=&space;\frac{1}{1&plus;e^-x}" title="f(x) = \frac{1}{1+e^-x}" />
 
 ```python
 def fungsi_aktivasi(x) :
@@ -22,7 +22,7 @@ def fungsi_aktivasi(x) :
 
 and its derivative 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=f'(x)&space;=&space;f(x)*[1-f(x)]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f'(x)&space;=&space;f(x)*[1-f(x)]" title="f'(x) = f(x)*[1-f(x)]" /></a>
+<img src="https://latex.codecogs.com/svg.latex?f'(x)&space;=&space;f(x)*[1-f(x)]" title="f'(x) = f(x)*[1-f(x)]" />
 
 ```python
 def fungsi_aktivasi_turunan(x) :
