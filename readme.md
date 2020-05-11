@@ -48,32 +48,32 @@ Install Python 3.x -> Install Numpy at Python -> Use whatever IDE then RUN main.
 
 ## LEGENDS
 ### 0 dan 1
-n           = panjang kolom data latih (banyak fitur)
-p           = panjang row target data latih (banyak data latih)
-x           = data latih
-t           = target data latih
-v_i_j       = bobot awal untuk hidden neuron (acak)
-v_i_j_baru  = bobot baru untuk hidden neuron (Nguyen-Widrow)
-v_0_j       = bias awal untuk hidden neuron (acak)
-w_j_k       = bobot awal untuk output neuron (acak)
-w_0_k       = bias awal untuk output neuron (acak)
+- n           = panjang kolom data latih (banyak fitur)
+- p           = panjang row target data latih (banyak data latih)
+- x           = data latih
+- t           = target data latih
+- v_i_j       = bobot awal untuk hidden neuron (acak)
+- v_i_j_baru  = bobot baru untuk hidden neuron (Nguyen-Widrow)
+- v_0_j       = bias awal untuk hidden neuron (acak)
+- w_j_k       = bobot awal untuk output neuron (acak)
+- w_0_k       = bias awal untuk output neuron (acak)
 
 ### 2
-z_in         = hasil perhitungan input pada hidden neuron
-z           = hasil perhitungan output (z_in) hidden neuron dengan f(x)
-y_in        = hasil perhitungan input pada output neuron
-y           = hasil perhitungan output (y_in) hidden neuron dengan f(x)
+- z_in         = hasil perhitungan input pada hidden neuron
+- z           = hasil perhitungan output (z_in) hidden neuron dengan f(x)
+- y_in        = hasil perhitungan input pada output neuron
+- y           = hasil perhitungan output (y_in) hidden neuron dengan f(x)
 
 ### 3
-δk          = faktor error pada output layer
-δin_j       = hasil jumlah delta error dari output neuron (menggunakan δk)
-δj          = faktor error pada hidden layer
+- δk          = faktor error pada output layer
+- δin_j       = hasil jumlah delta error dari output neuron (menggunakan δk)
+- δj          = faktor error pada hidden layer
 
 ### 4
-Δw_j_k      = perubahan bobot pada output layer (menggunakan δk)
-Δw_0_k      = perubahan bias pada output layer (menggunakan δk)
-Δv_i_j      = perubahan bobot pada hidden layer (menggunakan δj)
-Δv_0_j      = perubahan bias pada hidden layer (menggunakan δj)
+- Δw_j_k      = perubahan bobot pada output layer (menggunakan δk)
+- Δw_0_k      = perubahan bias pada output layer (menggunakan δk)
+- Δv_i_j      = perubahan bobot pada hidden layer (menggunakan δj)
+- Δv_0_j      = perubahan bias pada hidden layer (menggunakan δj)
 
 ### 5
 epoch       = genap 1 kali iterasi dari semua data latih
