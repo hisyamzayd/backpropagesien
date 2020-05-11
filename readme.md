@@ -37,3 +37,7 @@ Using epoch. Max epoch = 1100
 ```python
 while (epoch < max_epoch) :
 ```
+
+## How to Run
+
+Install Python 3.x -> Install Numpy at Python -> Use whatever IDE then RUN main.py

@@ -41,6 +41,7 @@ def fungsi_aktivasi_turunan(x) :
     pengkali = 1 - fungsi_aktivasi(x)
     return fungsi_aktivasi(x)*pengkali
 
+## PERHITUNGAN PERTAMA
 def bobot_nguyen_widrow(n, p, v_i_j) :
     root_value = 1/n
     β = 0.7 * (p ** root_value)
@@ -136,14 +137,6 @@ def each_backpropagation(each_data_latih, each_target_data_latih, w, alpha, z, z
     # return np.round_(Δw_j_k, 5), np.round_(Δw_0_k, 5), np.round_(Δv_i_j, 5), np.round_(Δv_0_j, 5)
     return Δw_j_k, Δw_0_k, Δv_i_j, Δv_0_j
 
-def each_update_bobot(w, bias_output, v_i_j_baru, bias_hidden, Δw_j_k, Δw_0_k, Δv_i_j, Δv_0_j) :
-    w_baru = update_bobot_func(w, Δw_j_k)
-    bias_output_baru = update_bobot_func(bias_output, Δw_0_k)
-    v_i_j_baru = update_bobot_func(v_i_j_baru, Δv_i_j)
-    bias_hidden_baru = update_bobot_func(bias_hidden, Δv_0_j)
-
-    return w_baru, bias_output_baru, v_i_j_baru, bias_hidden_baru
-
 def update_bobot_func(matrix1, matrix2) :
     row_len = len(matrix1)
     if type(matrix1[0]) is type(matrix1) :
@@ -158,6 +151,15 @@ def update_bobot_func(matrix1, matrix2) :
             result[i] = matrix1[i] + matrix2[i]
     return result
 
+def each_update_bobot(w, bias_output, v_i_j_baru, bias_hidden, Δw_j_k, Δw_0_k, Δv_i_j, Δv_0_j) :
+    w_baru = update_bobot_func(w, Δw_j_k)
+    bias_output_baru = update_bobot_func(bias_output, Δw_0_k)
+    v_i_j_baru = update_bobot_func(v_i_j_baru, Δv_i_j)
+    bias_hidden_baru = update_bobot_func(bias_hidden, Δv_0_j)
+
+    return w_baru, bias_output_baru, v_i_j_baru, bias_hidden_baru
+
+### PERHITUNGAN KEDUA
 def pengujian(v_i_j_baru, data_latih, target_data_latih, bias_hidden, w, bias_output, alpha, max_epoch) :
     epoch = 0
     while (epoch < max_epoch) :
@@ -165,16 +167,18 @@ def pengujian(v_i_j_baru, data_latih, target_data_latih, bias_hidden, w, bias_ou
         z, z_in, y, y_in = each_feedforward(v_i_j_baru, data_latih[0], bias_hidden, w, bias_output)
         Δw_j_k, Δw_0_k, Δv_i_j, Δv_0_j = each_backpropagation(data_latih[0], target_data_latih[0], w, alpha, z, z_in, y, y_in)
         w, bias_output, v_i_j_baru, bias_hidden = each_update_bobot(w, bias_output, v_i_j_baru, bias_hidden, Δw_j_k, Δw_0_k, Δv_i_j, Δv_0_j)
-        print(epoch)
+        print('epoch ke ', epoch)
+    print()
     return w, bias_output, v_i_j_baru, bias_hidden
 
+# Main Function
 if __name__ == "__main__" :
 
     v_i_j_baru = bobot_nguyen_widrow(len(data_latih[0]), len(target_data_latih), v_i_j)
 
     w, bias_output, v_i_j_baru, bias_hidden = pengujian(v_i_j_baru, data_latih, target_data_latih, bias_hidden, w, bias_output, alpha, max_epoch)
 
-    print('bobot output = ', w, '\n')
-    print('bias output = ', bias_output, '\n')
-    print('bobot hidden = ', v_i_j_baru, '\n')
-    print('bias hidden = ', bias_hidden, '\n')
+    print('bobot output = \n', w, '\n')
+    print('bias output = \n', bias_output, '\n')
+    print('bobot hidden = \n', v_i_j_baru, '\n')
+    print('bias hidden = \n', bias_hidden)
