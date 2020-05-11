@@ -76,4 +76,4 @@ Install Python 3.x -> Install Numpy at Python -> Use whatever IDE then RUN main.
 - Δv_0_j      = perubahan bias pada hidden layer (menggunakan δj)
 
 ### 5
-epoch       = genap 1 kali iterasi dari semua data latih
+- epoch       = genap 1 kali iterasi dari semua data latih
